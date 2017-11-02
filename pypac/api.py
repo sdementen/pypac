@@ -131,6 +131,7 @@ class PACSession(requests.Session):
         :param str socks_scheme: Scheme to use when PAC file returns a SOCKS proxy. `socks5` by default.
         """
         super(PACSession, self).__init__()
+        self.trust_env = False
         self._tried_get_pac = False
 
         self._proxy_resolver = None
